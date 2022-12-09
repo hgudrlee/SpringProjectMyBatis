@@ -13,6 +13,15 @@
         <property name="dataSource" ref="ds"/>
     </bean>
 
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="ds"></property>
+        <property name="configLocation" value="classpath:mybatis-config.xml" />
+        <property name="mapperLocations" value="classpath:mappers/*-mapper.xml"></property>
+    </bean>
+    <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate" destroy-method="clearCache">
+        <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory" />
+    </bean>
+
     <!--<bean id="boardDAO" class="com.spring.board.BoardDAO">
         <property name="jdbcTemplate" ref="jt"/>
     </bean>-->
