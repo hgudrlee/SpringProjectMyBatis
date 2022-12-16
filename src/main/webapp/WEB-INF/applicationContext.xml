@@ -22,7 +22,7 @@
         <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory" />
     </bean>
 
-    <!--<bean id="boardDAO" class="com.spring.board.BoardDAO">
+    <!--<bean id="boardDAO" class="com.spring.diary.DiaryDAO">
         <property name="jdbcTemplate" ref="jt"/>
     </bean>-->
 </beans>

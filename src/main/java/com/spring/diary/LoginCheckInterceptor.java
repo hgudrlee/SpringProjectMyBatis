@@ -1,4 +1,4 @@
-package com.spring.board;
+package com.spring.diary;
 
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;

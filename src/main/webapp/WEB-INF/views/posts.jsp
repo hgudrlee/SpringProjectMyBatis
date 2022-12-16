@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     isELIgnored="false" pageEncoding="UTF-8"%>
-<%@page import="com.spring.board.BoardDAO, com.spring.board.BoardVO,java.util.*"%>
+<%@page import="com.spring.diary.DiaryDAO, com.spring.diary.DiaryVO,java.util.*"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
@@ -24,7 +24,7 @@
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: center;
-  background-color: #006bb3;
+  background-color: forestgreen;
   color: white;
 }
 </style>
@@ -36,7 +36,7 @@
 </script>
 </head>
 <body>
-<h1>자유게시판</h1>
+<h1>나의 비밀정원</h1>
 <%--<%
 	BoardDAO boardDAO = new BoardDAO();
 	List<BoardVO> list = boardDAO.getBoardList();
@@ -45,20 +45,28 @@
 <table id="list" width="90%">
 <tr>
 	<th>Id</th>
-	<th>Title</th>
 	<th>Writer</th>
-	<th>Content</th>
 	<th>Regdate</th>
+	<th>Content</th>
+	<th>Mood</th>
+	<th>Goal</th>
+	<th>Wakeup</th>
+	<th>Payment</th>
+	<th>Exercise</th>
 	<th>Edit</th>
 	<th>Delete</th>
 </tr>
 <c:forEach items="${list}" var="u">
 	<tr>
 		<td>${u.seq}</td>
-		<td>${u.title}</td>
 		<td>${u.writer}</td>
-		<td>${u.content}</td>
 		<td>${u.regdate}</td>
+		<td>${u.content}</td>
+		<td>${u.mood}</td>
+		<td>${u.goal}</td>
+		<td>${u.wakeup}</td>
+		<td>${u.payment}</td>
+		<td>${u.exercise}</td>
 		<td><a href="editform/${u.seq}">Edit</a></td>
 		<td><a href="javascript:delete_ok('${u.seq}')">Delete</a></td>
 	</tr>

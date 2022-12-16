@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Diary">
+    <insert id="insertDiary">
+        insert into Diary (writer, content, mood, goal, wakeup, payment, exercise)
+        values
+        (#{writer}, #{content}, #{mood}, #{goal}, #{wakeup}, #{payment}, #{exercise})
+    </insert>
+    <update id="updateDiary">
+        update Diary
+        set writer=#{writer}, content=#{content}, mood=#{mood}, goal=#{goal}, wakeup=#{wakeup}, payment=#{payment}, exercise=#{exercise}
+        where seq=#{seq}
+    </update>
+    <delete id="deleteDiary">
+        delete from Diary where seq=#{seq}
+    </delete>
+    <select id="getDiary" resultType="diary">
+        select * from Diary where seq=#{seq}
+    </select>
+    <select id="getDiaryList" resultType="diary">
+        select * from Diary order by seq desc
+    </select>
+</mapper>

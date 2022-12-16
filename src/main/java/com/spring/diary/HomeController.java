@@ -1,4 +1,4 @@
-package com.spring.board;
+package com.spring.diary;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
